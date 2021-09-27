@@ -41,6 +41,14 @@ function showQuestion() {
   //set counter
   $('#turns').text(turn + 1);
 
+  //progress bar for going to next question
+  $( "#progressbar" ).progressbar(
+    {
+      value: turn,
+      max: 3
+    }
+    );
+
   //show question in text
   $('#question').text( info[turn].question );
 
@@ -50,10 +58,12 @@ function showQuestion() {
   
 
   for ( let index in info[turn].answers ){
+      $('span').addClass('fluff');
+       
     // make button and set text to answer text 
     let button = $("<span>");
-   
     button.text( info[turn].answers[index] );
+   
     
     //checking if answer is correct for score
       if(index == info[turn].correct_choice){
@@ -69,7 +79,7 @@ function showQuestion() {
 
        $('#answers').append(button);
 
-      //add event handler
+      //add event handler to drag button
        button.draggable();
   }
 
@@ -89,19 +99,7 @@ function showQuestion() {
 
 }
 
-/*function checkAnswer(choice) {
-    // handle event when user clicks an answer: right or wrong?
-    // decide which answer is correct
-    if ( choice == info[turn].correct_choice ) {
-      $('#buzz').empty();
-      $('#ding').text("Yes! So smart");
-      keepScore();
-    } else {
-      // wrong button
-      $('#buzz').text("Nope, try again!");
-      $('#ding').empty();
-    }
-}  */
+
 
 function keepScore(){
   
@@ -116,3 +114,7 @@ function keepScore(){
     }
 
 }
+
+
+
+

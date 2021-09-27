@@ -7,23 +7,25 @@
 	<title>Quiz with Jquery</title>
 	<!-- 1. to use jQuery UI, first we must load the main jQuery library -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js">
+
 	</script>
 	<!-- 2. now we can load the jQuery UI javascript file -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js">
+
 	</script>
 	<!-- 3. we must load at least one jquery ui theme css file -->
 	<link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
 
 	<style>
-		span {
+		#answers span {
 			display: inline-block;
 			padding: 25px;
 			background-color: #9965a1;
-			color: ##0a0f57;
+			color: #0a0f57;
 			margin: 10px;
 			border-radius: 5px;
 			font-weight: bold;
-		} 
+		}
 
 		#question {
 			width: 70%;
@@ -36,7 +38,7 @@
 		.flashy {
 			background-color: #db92de;
 			border: solid;
-			color: black;
+			color: #0a0f57;
 			padding: 5px 10px;
 			border-radius: 12px;
 			text-align: center;
@@ -50,12 +52,16 @@
 		.spacer {
 			padding: 10px;
 		}
+
+    
 	</style>
 
 </head>
 
 <body>
 	<h1>Quiz of Quizzes</h1>
+
+	<div id="progressbar" >Answer Progress</div>
 
 	<h5 id="turns">
 		Turn:
@@ -82,35 +88,39 @@
 	<div id="accordion">
 		<h3>Tip: Question 1</h3>
 		<div>
-			<p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel,
-				gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur
-				malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+			<p> Click the link to get help on the answer</p>
+			<a href="https://www.w3schools.com/js/js_function_parameters.asp" target="_blank">Find help here</a>
 		</div>
 		<h3>Tip: Question 2</h3>
 		<div>
-			<p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet,
-				mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna.
-				</p>
+			<p>Click the link to get help on the answer</p>
+			<a href="https://www.w3schools.com/js/js_booleans.asp" target="_blank">Find help here</a>
 		</div>
 		<h3>Tip: Question 3</h3>
 		<div>
-			<p>Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus in massa.
-				Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare,
-				quam ante aliquam nisi, eu iaculis leo purus venenatis dui. </p>
-			<ul>
-				<li>List item one</li>
-				<li>List item two</li>
-				<li>List item three</li>
-			</ul>
+			<p>Click the link to get help on the answer</p>
+			<a href="https://www.w3schools.com/js/js_functions.asp" target="_blank">Find help here</a>
+
+
 		</div>
-		
+
 	</div>
 
 	<script src="script.js"></script>
-  <script>
-		$( "#accordion" ).accordion({
+	<script>
+		$( "#accordion" ).accordion(
+      {
       collapsible: true
-    });
+       }
+    );
+
+   
+
+    $('#score').droppable(
+      function(){
+        console.log("work?")
+      }
+    );
 	</script>
 </body>
 
